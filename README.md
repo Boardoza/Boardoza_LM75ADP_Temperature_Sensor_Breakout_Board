@@ -56,7 +56,18 @@ It is ideal for applications requiring accurate temperature sensing in **industr
 | A1 | Digital input. User-defined address bit 1 |
 | A2 | Digital input. User-defined address bit 2 |
 
-> The I<sup>2</sup>C address can be changed by configuring the A0–A2 pins, allowing up to 8 devices on the same bus.
+> The I<sup>2</sup>C address can be changed by configuring the A0–A2 pins, allowing up to 8 devices on the same bus. The address pins (A0, A1, A2) are pulled down to GND by default, resulting in the default I²C address of 0x48. You can change the address by shorting the respective address pads on the board to set them to logical 1.
+
+| A2 | A1 | A0 | I²C Address (Hex) |
+|:---:|:---:|:---:|:---:|
+| 0 | 0 | 0 | 0x48 (default) |
+| 0 | 0 | 1 | 0x49 |
+| 0 | 1 | 0 | 0x4A |
+| 0 | 1 | 1 | 0x4B |
+| 1 | 0 | 0 | 0x4C |
+| 1 | 0 | 1 | 0x4D |
+| 1 | 1 | 0 | 0x4E |
+| 1 | 1 | 1 | 0x4F |
 
 ---
 
